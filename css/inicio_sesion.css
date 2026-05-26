@@ -1,0 +1,274 @@
+/* ==========================================================================
+   RESET GENERAL Y VARIABLES DE IDENTIDAD (ESTILO CUPHEAD)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rojo-cuphead: #B61919;
+    --negro-tinta: #1A1A1A;
+    --fondo-viejo: #F4EFE3;
+    --blanco-papel: #FFFDF9; /* Un blanco roto menos digital para las tarjetas */
+}
+
+/* Configuración del Cuerpo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--fondo-viejo);
+    color: var(--negro-tinta);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Enlaces generales estilo cómic */
+a {
+    color: var(--rojo-cuphead);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--negro-tinta);
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE CABECERA Y PIE DE PÁGINA (HEADER & FOOTER)
+   ========================================================================== */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--blanco-papel);
+    border-bottom: 4px solid var(--negro-tinta); /* Separación gruesa estilo viñeta */
+}
+
+header h1 {
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+header .logotipo img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid var(--negro-tinta);
+    border-radius: 50%; /* Si tu logo es circular */
+}
+
+footer {
+    background-color: var(--negro-tinta); /* Cambiado el azul por negro de tinta */
+    border-top: 4px solid var(--rojo-cuphead);
+    padding: 15px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    color: var(--fondo-viejo);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Area de Contenido Central */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ==========================================================================
+   INTERFAZ DE INICIO DE SESIÓN (CARTOON CARD)
+   ========================================================================== */
+.inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    background-color: var(--blanco-papel); 
+    padding: 40px 30px;        
+    border: 4px solid var(--negro-tinta); /* Borde tosco */       
+    box-shadow: 8px 8px 0px var(--negro-tinta); /* Sombra rígida de bloque */
+    border-radius: 12px;       
+    width: 100%;
+    max-width: 450px;          
+    margin: 0 auto;    
+}
+
+.inicio-sesion h1, .inicio-sesion h2 {
+    color: var(--negro-tinta);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Formulario interactivo */
+.inicio-sesion form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Cajas de texto estilo caricatura */
+.inicio-sesion form input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--fondo-viejo); /* Inputs color papel */
+    border: 3px solid var(--negro-tinta);
+    border-radius: 8px;
+    outline: none;
+    color: var(--negro-tinta);
+}
+
+.inicio-sesion form input:focus {
+    background-color: #ffffff;
+    border-color: var(--rojo-cuphead);
+}
+
+/* Botón de enviar definitivo */
+.inicio-sesion form button {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--rojo-cuphead);
+    color: #ffffff;
+    border: 3px solid var(--negro-tinta);
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px var(--negro-tinta);
+    cursor: pointer;
+}
+
+.inicio-sesion form button:hover {
+    background-color: var(--negro-tinta);
+    color: var(--fondo-viejo);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--negro-tinta);
+}
+
+/* ==========================================================================
+   MODAL DE VALIDACIÓN / CÓDIGO DE ACCESO
+   ========================================================================== */
+.modal-fondo {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.8); /* Fondo de tinta semi-transparente */
+    z-index: 1000; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-caja {
+    background-color: var(--blanco-papel);
+    padding: 35px 40px;
+    border: 4px solid var(--negro-tinta);
+    box-shadow: 8px 8px 0px var(--negro-tinta);
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 380px;
+}
+
+.modal-caja h2 {
+    color: var(--negro-tinta);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.modal-caja p {
+    color: #444444; 
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Casillas del código de verificación de 4 dígitos */
+.codigo-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 12px; 
+    margin-bottom: 25px;
+}
+
+.codigo-input {
+    width: 50px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid var(--negro-tinta);
+    border-radius: 8px;
+    background-color: var(--fondo-viejo);
+    color: var(--negro-tinta);
+    outline: none; 
+}
+
+.codigo-input:focus {
+    border-color: var(--rojo-cuphead); 
+    background-color: #ffffff;
+}
+
+/* Botón del Modal */
+.modal-caja button {
+    width: 100%;
+    background-color: var(--negro-tinta);
+    color: var(--fondo-viejo);
+    border: 3px solid var(--negro-tinta);
+    box-shadow: 4px 4px 0px var(--rojo-cuphead); /* Sombra roja de contraste */
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal-caja button:hover {
+    background-color: var(--rojo-cuphead);
+    color: white;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--negro-tinta);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (AJUSTE RESPONSIVO)
+   ========================================================================== */
+@media (min-width: 768px) {
+    body {
+        background-color: var(--fondo-viejo); /* Mantenemos el fondo de papel en PC */
+    }
+
+    header {
+        padding: 20px 80px;
+    }
+
+    .inicio-sesion {
+        padding: 50px 40px;        
+        max-width: 550px; /* Tamaño optimizado para pantallas grandes y laptops */          
+    }
+
+    .inicio-sesion h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+}
